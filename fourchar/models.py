@@ -3,11 +3,11 @@ from django.db import models
 
 class Chengyu(models.Model):
     RARITY_CHOICES = [
-        {1, 'Very Common'},
-        {2, 'Common'},
-        {3, 'Uncommon'},
-        {4, 'Rare'},
-        {5, 'Very Rare'},
+        (1, 'Very Common'),
+        (2, 'Common'),
+        (3, 'Uncommon'),
+        (4, 'Rare'),
+        (5, 'Very Rare'),
     ]
     z_rarity = models.IntegerField(
         choices=RARITY_CHOICES,
