@@ -12,5 +12,5 @@ class Migration(migrations.Migration):
         ('fourchar', '0001_initial'),
     ]
     operations = [
-        migrations.RunPython(move_on),
+        migrations.RunPython(move_on, move_on),
     ]
