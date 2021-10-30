@@ -1,0 +1,16 @@
+<section>
+  {% if matching_chengyus %}
+  <h2>Chengyus containing {{query}}</h2>
+  <ul>
+    {% for chengyu in matching_chengyus %}
+    <li>
+      <a href="/admin/fourchar/chengyu/{{ chengyu.id }}/change"
+        >{{ chengyu.chengyu_text }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>Looks like no Chengyu contain {{query}}</p>
+  {% endif %}
+</section>

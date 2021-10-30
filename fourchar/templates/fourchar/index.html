@@ -1,14 +1,16 @@
-{% if most_common_chengyus %}
-<h2>Chengyus You've Discovered</h2>
-<ul>
-  {% for chengyu in most_common_chengyus %}
-  <li>
-    <a href="/admin/fourchar/chengyu/{{ chengyu.id }}/change"
-      >{{ chengyu.chengyu_text }} => {{ chengyu.chengyu_translation }}</a
-    >
-  </li>
-  {% endfor %}
-</ul>
-{% else %}
-<p>Looks like you haven't translated or updated any Chengyu.</p>
-{% endif %}
+<section>
+  {% if most_common_chengyus %}
+  <h2>Some possibly-pertinent Chengyus:</h2>
+  <ul>
+    {% for chengyu in most_common_chengyus %}
+    <li>
+      <a href="/admin/fourchar/chengyu/{{ chengyu.id }}/change"
+        >{{ chengyu.chengyu_text }} => {{ chengyu.chengyu_translation }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>Looks like you haven't translated or updated any Chengyu.</p>
+  {% endif %}
+</section>
