@@ -11,12 +11,13 @@ def index(request):
     return render(request, 'fourchar/index.html', context)
 
 
-def search(request, query):
+def search(request):
+    query_string = request.GET.get('q')
     return render(
         request,
         'fourchar/search.html',
         {
-            'matching_chengyus': Chengyu.objects.filter(chengyu_text__contains=query),
-            'query': query
+            'matching_chengyus': Chengyu.objects.filter(chengyu_text__contains=query_string),
+            'query': query_string
         }
     )

@@ -1,6 +1,14 @@
 <section>
+    <form action="search" method="get">
+    <label for="q"><h2>Find Chengyus containing:</h2></label>
+    <input type="text" id="q" name="q" />
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<section>
   {% if most_common_chengyus %}
-  <h2>Some possibly-pertinent Chengyus:</h2>
+  <h2>Or read prior Chengyus:</h2>
   <ul>
     {% for chengyu in most_common_chengyus %}
     <li>
