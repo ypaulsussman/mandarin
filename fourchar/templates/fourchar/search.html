@@ -15,6 +15,9 @@
           <a href="/admin/fourchar/chengyu/{{ chengyu.id }}/change"
             >{{ chengyu.chengyu_text }}</a
           >
+          {% if chengyu.chengyu_translation %}
+          <span> ("{{chengyu.chengyu_translation}}")</span>
+          {% endif %}
         </li>
         {% endfor %}
         <p>Or <a href="{% url 'index' %}">keep searching.</a></p>
