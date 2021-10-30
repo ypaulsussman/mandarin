@@ -1,17 +1,28 @@
-<section>
-  {% if matching_chengyus %}
-  <h2>Chengyus containing {{query}}</h2>
-  <ul>
-    {% for chengyu in matching_chengyus %}
-    <li>
-      <a href="/admin/fourchar/chengyu/{{ chengyu.id }}/change"
-        >{{ chengyu.chengyu_text }}</a
-      >
-    </li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <h2>Looks like no Chengyu contain "{{query}}".</h2>
-  <p>Maybe <a href="{% url 'index' %}">head home?</a></p>
-  {% endif %}
-</section>
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'fourchar/styles.css' %}"
+/>
+<div id="container">
+  <main class="main">
+    <section>
+      {% if matching_chengyus %}
+      <h2>Chengyus containing {{query}}</h2>
+      <ul>
+        {% for chengyu in matching_chengyus %}
+        <li>
+          <a href="/admin/fourchar/chengyu/{{ chengyu.id }}/change"
+            >{{ chengyu.chengyu_text }}</a
+          >
+        </li>
+        {% endfor %}
+        <p>Or <a href="{% url 'index' %}">keep searching.</a></p>
+      </ul>
+      {% else %}
+      <h2>Looks like no Chengyu contain "{{query}}".</h2>
+      <p>Maybe <a href="{% url 'index' %}">head home?</a></p>
+      {% endif %}
+    </section>
+  </main>
+</div>
