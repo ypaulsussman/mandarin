@@ -11,6 +11,8 @@
     {% endfor %}
   </ul>
   {% else %}
-  <p>Looks like no Chengyu contain {{query}}</p>
+  <p>
+    Looks like no Chengyu contain {{query}}. Maybe <a href="{% url 'index' %}">head home?</a>
+  </p>
   {% endif %}
 </section>
